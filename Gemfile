@@ -1,7 +1,15 @@
 source 'https://rubygems.org'
 gem 'rails_12factor', group: :production
 
-gem 'pg', group: :production
+#gem 'pg', group: :production
+
+group :development do 
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
