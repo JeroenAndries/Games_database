@@ -6,4 +6,5 @@ class Game < ActiveRecord::Base
 	validates :discription, length: {maximum: 200}
 	validates :release, :inclusion => 1900..2100
 	validates :release, :presence => true
+	mount_uploader :image, ImageUploader
 end

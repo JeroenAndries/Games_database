@@ -12,17 +12,18 @@
   <tbody>
     <% @genres.each do |genre| %>
       <tr>
-        <td><%= genre.name %></td>
+        <td><%= link_to genre.name, genre  %></td>
         <td>
           <ul>
             <% genre.games.each do |game| %>
             <li>
               <%= link_to game.name, game %>
+              <%= image_tag game.image_url, size:"60x42"%>
             </li>
             <% end %>
           </ul>
         </td>
-        
+
       </tr>
     <% end %>
   </tbody>

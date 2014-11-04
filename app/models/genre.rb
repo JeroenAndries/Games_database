@@ -3,4 +3,5 @@ class Genre < ActiveRecord::Base
 	validates :name, length: {maximum: 32}
 	validates :name, :presence => true
 	validates :discription, length: {maximum: 200}
+	
 end
