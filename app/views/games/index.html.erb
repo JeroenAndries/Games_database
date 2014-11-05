@@ -20,13 +20,18 @@
         <td><%= game.release %></td>
         <td><%= image_tag game.image_url , size: "60x42" %></td>
         <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=if user_signed_in?
+         link_to 'Edit', edit_game_path(game) 
+          end%></td>
+        <td><%= if user_signed_in?
+         link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } 
+         end %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Game', new_game_path %>
+<%= if user_signed_in?
+ link_to 'New Game', new_game_path 
+  end %>
